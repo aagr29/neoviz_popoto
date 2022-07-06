@@ -30,10 +30,14 @@
               Enzen Digital
             </a>
             <ul class="nav nav-pills">
+               
+                
               <li class="nav-item">
                 <button class="button-87" role="button" id="myBtn">Overview Graph</button>
               </li>
+
               </ul>
+
           </nav>
        
         <div class="notice-bar">
@@ -65,6 +69,7 @@
     
 
     <div class="col">
+        
   
         
   <!--#exampleModalLong Modal modal fade bd-example-modal-lg-->
@@ -88,9 +93,14 @@
   </div>
 </div>
 </div>
-    
+        
+
         <div id="popoto-results" class="ppt-result">
             DESCRIPTION
+            <!-- Cypher Button btn btn-primary-->
+        <button type="button" class="button-87" data-toggle="modal" data-target=".bd-example-modal-lg">
+            CYPHER QUERY
+          </button>
           <!-- Results are generated here class="table-holder"  -->  
         </div>
 
@@ -103,10 +113,7 @@
         </div>
         <br>
        
-        <!-- Cypher Button -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
-            CYPHER QUERY
-          </button>
+        
     
    </div>
 
@@ -158,6 +165,145 @@
 
 
     popoto.provider.node.Provider = {
+
+        "CEO Dashboard": {
+            "returnAttributes": ["Name","Description","Category","Level","Cost"],
+            "constraintAttribute": "Name",
+            "displayResults": function (pResultElmt) {
+                var tbody = pResultElmt.append("table").attr("class", "json-object").append("tbody");
+                var name1 = tbody.append("tr");
+                //name1.append("th").text("Name");
+                name1.append("th").attr("colspan",2).text(function (result) {
+                    return result.attributes.Name;
+                });
+
+                var desc = tbody.filter(function (result) {
+                    // Filter on attribute having Description attribute value
+                    return result.attributes.Description;
+                }).append("tr");
+                //desc.append("th").text("Description");
+                desc.append("td").attr("colspan",2).style("text-align","center").text(function (result) {
+                    return result.attributes.Description;
+                });
+                var cat = tbody.filter(function (result) {
+                    // Filter on attribute having Category attribute value
+                    return result.attributes.Category;
+                }).append("tr");
+                cat.append("th").text("Category");
+                cat.append("td").text(function (result) {
+                    return result.attributes.Category;
+                });
+                var lev = tbody.filter(function (result) {
+                    // Filter on attribute having Level attribute value
+                    return result.attributes.Level;
+                }).append("tr");
+                lev.append("th").text("Level");
+                lev.append("td").text(function (result) {
+                    return result.attributes.Level;
+                });
+                var cost1 = tbody.filter(function (result) {
+                    // Filter on attribute having Cost attribute value
+                    return result.attributes.Cost;
+                }).append("tr");
+                cost1.append("th").text("Cost");
+                cost1.append("td").text(function (result) {
+                    return result.attributes.Cost;
+                });
+            }
+        },
+
+        "Sustainably cost efficient": {
+            "returnAttributes": ["Name","Description","Category","Level","Cost"],
+            "constraintAttribute": "Name",
+            "displayResults": function (pResultElmt) {
+                var tbody = pResultElmt.append("table").attr("class", "json-object").append("tbody");
+                var name1 = tbody.append("tr");
+                //name1.append("th").text("Name");
+                name1.append("th").attr("colspan",2).text(function (result) {
+                    return result.attributes.Name;
+                });
+
+                var desc = tbody.filter(function (result) {
+                    // Filter on attribute having Description attribute value
+                    return result.attributes.Description;
+                }).append("tr");
+                //desc.append("th").text("Description");
+                desc.append("td").attr("colspan",2).style("text-align","center").text(function (result) {
+                    return result.attributes.Description;
+                });
+                var cat = tbody.filter(function (result) {
+                    // Filter on attribute having Category attribute value
+                    return result.attributes.Category;
+                }).append("tr");
+                cat.append("th").text("Category");
+                cat.append("td").text(function (result) {
+                    return result.attributes.Category;
+                });
+                var lev = tbody.filter(function (result) {
+                    // Filter on attribute having Level attribute value
+                    return result.attributes.Level;
+                }).append("tr");
+                lev.append("th").text("Level");
+                lev.append("td").text(function (result) {
+                    return result.attributes.Level;
+                });
+                var cost1 = tbody.filter(function (result) {
+                    // Filter on attribute having Cost attribute value
+                    return result.attributes.Cost;
+                }).append("tr");
+                cost1.append("th").text("Cost");
+                cost1.append("td").text(function (result) {
+                    return result.attributes.Cost;
+                });
+            }
+        },
+
+        "Progress on Renewable energy": {
+            "returnAttributes": ["Name","Description","Category","Level","Cost"],
+            "constraintAttribute": "Name",
+            "displayResults": function (pResultElmt) {
+                var tbody = pResultElmt.append("table").attr("class", "json-object").append("tbody");
+                var name1 = tbody.append("tr");
+                //name1.append("th").text("Name");
+                name1.append("th").attr("colspan",2).text(function (result) {
+                    return result.attributes.Name;
+                });
+
+                var desc = tbody.filter(function (result) {
+                    // Filter on attribute having Description attribute value
+                    return result.attributes.Description;
+                }).append("tr");
+                //desc.append("th").text("Description");
+                desc.append("td").attr("colspan",2).style("text-align","center").text(function (result) {
+                    return result.attributes.Description;
+                });
+                var cat = tbody.filter(function (result) {
+                    // Filter on attribute having Category attribute value
+                    return result.attributes.Category;
+                }).append("tr");
+                cat.append("th").text("Category");
+                cat.append("td").text(function (result) {
+                    return result.attributes.Category;
+                });
+                var lev = tbody.filter(function (result) {
+                    // Filter on attribute having Level attribute value
+                    return result.attributes.Level;
+                }).append("tr");
+                lev.append("th").text("Level");
+                lev.append("td").text(function (result) {
+                    return result.attributes.Level;
+                });
+                var cost1 = tbody.filter(function (result) {
+                    // Filter on attribute having Cost attribute value
+                    return result.attributes.Cost;
+                }).append("tr");
+                cost1.append("th").text("Cost");
+                cost1.append("td").text(function (result) {
+                    return result.attributes.Cost;
+                });
+            }
+        },
+
         "Notify customer to improve customer experience": {
             "returnAttributes": ["Name","Description","Category","Level","Cost"],
             "constraintAttribute": "Name",
@@ -413,7 +559,7 @@ popoto.graph.USE_FIT_TEXT = true;
 
     driver.verifyConnectivity().then(function () {
         // Start the generation using parameter as root label of the query.
-        popoto.start("CEO Dashboard");
+        popoto.start("Notify customer to improve customer experience");
     }).catch(function (error) {
         document.getElementById("modal").style.display = "block";
         

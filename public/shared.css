@@ -64,13 +64,13 @@
     color: #fff;
     font-weight: 700;
     margin-bottom: 12px;
-    margin-top: 0;
+     margin-top: 15px; /* previously 0px */
     border-bottom: 1px solid #424650;
 }
 
 .main {
     position: absolute;
-    overflow: hidden;
+    overflow: auto;
     top: 0;
     bottom: 0;
     left: 200px;
@@ -88,7 +88,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .code-bar {
@@ -127,7 +127,7 @@ body {
     opacity: 1;
     max-height: 10000px;
     border-bottom: 1px solid #e6e9ef;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .frame:-webkit-full-screen {
