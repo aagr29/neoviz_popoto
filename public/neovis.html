@@ -4,9 +4,14 @@
 <head>
   <title>Enzen</title>
 
+
   <!-- Bootstrap Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Add Popoto default CSS styles -->
+<link rel="stylesheet" href="popoto.min.css">
+<link rel="stylesheet" href="shared.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -14,100 +19,58 @@
   <script src="https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js"></script>
       <!-- Core theme CSS (includes Bootstrap)-->
       
-  <style>
-    #viz {
-      height: 800px;
-      margin: 0% 50px;
-    }
-    nav {
-      box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-    }
-    #name{
-      color: #FF8300;
-      font-weight: bold;
-      font-family: Georgia, serif;
-    }
-    p{
-      margin: 10px 100px;
-      font-family: Georgia, serif;
-      font-weight: 700;
-    }
 
-    /* CSS */
-    .button-87 {
-      font-size: 10px;
-      float: right;
-      padding: 8px 12px;
-      text-align: center;
-      text-transform: uppercase;
-      transition: 0.5s;
-      background-size: 200% auto;
-      color: white;
-      border-radius: 10px;
-      display: block;
-      border: 0px;
-      font-weight: 700;
-      box-shadow: 0px 0px 14px -7px #f09819;
-      background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
-      cursor: pointer;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-    }
-
-    .button-87:hover {
-      background-position: right center;
-      /* change the direction of the change here */
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .button-87:active {
-      transform: scale(0.95);
-    }
-
-  </style>
 </head>
-<script>
-  function draw() {
-    var config = {
-      container_id: "viz",
-      server_url: "bolt://35.189.34.111",
-      server_user: "neo4j",
-      server_password: "enzen",
-      labels: {
-      },
-      relationships: {
-      },
-      initial_cypher: "Match (n)-[r]->(m) Return n,r,m"
-    }
-    
-    var viz = new NeoVis.default(config);
-    viz.render();
-  }
 
-  document.getElementById("myBtn").addEventListener("click", myFunction);
-  function myFunction() {
-      window.location.href = "popoto.html";
-  }
-</script>
 
 <body onload="draw()">
-  <nav class="navbar navbar-light">
+
+ 
+
+  <nav class="navbar navbar-light bg-dark">
     <a id="name" class="navbar-brand" href="#">
       Enzen Digital
     </a>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <button class="button-87" role="button" id="myBtn">Interactive Graph</button>
+      </li>
+      </ul>
   </nav>
-    <p>Gas Process Map<button class="button-87" role="button" id="myBtn">Interactive Graph</button></p>
+
+  <div class="notice-bar">
+    Enzen Gas Model  
+</div>
+
+    
     <div id="viz">
     </div>
 
-  <script>
-    document.getElementById("myBtn").addEventListener("click", myFunction);
-    function myFunction() {
-      window.location.href = "popoto.html";
-    }
-  </script>
+
+    <script>
+      function draw() {
+        var config = {
+          container_id: "viz",
+          server_url: "bolt://35.189.34.111",
+          server_user: "neo4j",
+          server_password: "enzen",
+          labels: {
+          },
+          relationships: {
+          },
+          initial_cypher: "Match (n)-[r]->(m) Return n,r,m"
+        }
+        
+        var viz = new NeoVis.default(config);
+        viz.render();
+      }
+    
+      document.getElementById("myBtn").addEventListener("click", myFunction);
+        function myFunction() {
+          window.location.href = "index.html";
+        }
+    </script>
+
 
   <!-- Bootstrap Optional JavaScript -->
   <!-- jQuery, Popper.js, Bootstrap JS -->
