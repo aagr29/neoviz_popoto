@@ -58,18 +58,21 @@
           },
           relationships: {
           },
-          initial_cypher: "Match (n)-[r]->(m) Return n,r,m"
+          arrows:true,
+          initial_cypher: "Match (n)-[r]->(m) Return n,r,m",
+          physics: {
+       enabled: false}
+          
         }
         
         var viz = new NeoVis.default(config);
         viz.render();
       }
-    
-      document.getElementById("myBtn").addEventListener("click", myFunction);
-        function myFunction() {
-          window.location.href = "index.html";
-        }
-    </script>
+
+
+
+      
+      </script>
 
 
   <!-- Bootstrap Optional JavaScript -->
